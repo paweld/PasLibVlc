@@ -7739,13 +7739,14 @@ end;
   // LD_LIBRARY_PATH, then in /lib, then /usr/lib and finally the paths of
   // /etc/ld.so.conf.
 const
-  pathLst : array[0..6] of string = (
+  pathLst : array[0..7] of string = (
     '/usr/lib',
     '/lib',
     '/usr/local/lib',
     '/lib64',
     '/usr/lib64',
     '/usr/lib/x86_64-linux-gnu',
+    '/usr/lib/aarch64-linux-gnu',
     '/snap/vlc/current/usr/lib'
   );
 var
