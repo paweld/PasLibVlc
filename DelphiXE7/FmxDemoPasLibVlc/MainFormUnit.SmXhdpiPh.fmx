@@ -1,0 +1,5 @@
+inherited MainForm_SmXhdpiPh: TMainForm_SmXhdpiPh
+  ClientHeight = 375
+  ClientWidth = 250
+  DesignerMasterStyle = 0
+end

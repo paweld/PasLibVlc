@@ -1,0 +1,13 @@
+inherited MainForm_iPad: TMainForm_iPad
+  ClientHeight = 1004
+  ClientWidth = 768
+  DesignerMasterStyle = 0
+  inherited Panel1: TPanel
+    Position.X = 648.000000000000000000
+    Size.Height = 1004.000000000000000000
+  end
+  inherited FmxPasLibVlcPlayer1: TFmxPasLibVlcPlayer
+    Size.Width = 648.000000000000000000
+    Size.Height = 1004.000000000000000000
+  end
+end

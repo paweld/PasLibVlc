@@ -1,0 +1,32 @@
+object MainForm: TMainForm
+  Left = 411
+  Height = 367
+  Top = 192
+  Width = 515
+  Caption = 'DemoPasLibVlc'
+  Menu = MainMenu
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '2.0.2.0'
+  object OpenDialog: TOpenDialog
+    left = 16
+    top = 16
+  end
+  object MainMenu: TMainMenu
+    left = 16
+    top = 72
+    object FileMenuItem: TMenuItem
+      Caption = 'File'
+      object OpenMenuItem: TMenuItem
+        Caption = 'Open'
+        ShortCut = 16463
+        OnClick = MenuFileOpenClick
+      end
+      object QuitMenuItem: TMenuItem
+        Caption = 'Quit'
+        ShortCut = 49233
+        OnClick = MenuFileQuitClick
+      end
+    end
+  end
+end

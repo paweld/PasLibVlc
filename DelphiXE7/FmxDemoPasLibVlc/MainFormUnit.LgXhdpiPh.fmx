@@ -1,0 +1,5 @@
+inherited MainForm_LgXhdpiPh: TMainForm_LgXhdpiPh
+  ClientHeight = 695
+  ClientWidth = 450
+  DesignerMasterStyle = 0
+end

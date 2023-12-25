@@ -1,0 +1,13 @@
+inherited MainForm_Surface: TMainForm_Surface
+  ClientHeight = 1920
+  ClientWidth = 1080
+  DesignerMasterStyle = 0
+  inherited Panel1: TPanel
+    Position.X = 960.000000000000000000
+    Size.Height = 1920.000000000000000000
+  end
+  inherited FmxPasLibVlcPlayer1: TFmxPasLibVlcPlayer
+    Size.Width = 960.000000000000000000
+    Size.Height = 1920.000000000000000000
+  end
+end

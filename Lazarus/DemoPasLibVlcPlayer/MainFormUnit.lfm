@@ -1,0 +1,499 @@
+object MainForm: TMainForm
+  Left = 418
+  Height = 521
+  Top = 139
+  Width = 519
+  Caption = 'PasLibVlcPlayerDemo'
+  ClientHeight = 521
+  ClientWidth = 519
+  Color = clBtnFace
+  Constraints.MinHeight = 455
+  Constraints.MinWidth = 435
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnMouseDown = FormMouseDown
+  OnResize = FormResize
+  PopupMenu = PopupMenu
+  Position = poScreenCenter
+  LCLVersion = '2.0.8.0'
+  object MrlLab: TLabel
+    Left = 8
+    Height = 13
+    Top = 4
+    Width = 60
+    Caption = 'MRL to play:'
+    FocusControl = MrlEdit
+    ParentColor = False
+  end
+  object PR: TPanel
+    Left = 340
+    Height = 521
+    Top = 0
+    Width = 179
+    Align = alRight
+    BevelOuter = bvNone
+    ClientHeight = 521
+    ClientWidth = 179
+    TabOrder = 0
+    object PlayBtn: TButton
+      Left = 6
+      Height = 25
+      Top = 8
+      Width = 75
+      Caption = 'Play'
+      OnClick = PlayClick
+      TabOrder = 0
+    end
+    object PauseBtn: TButton
+      Left = 6
+      Height = 25
+      Top = 39
+      Width = 75
+      Caption = 'Pause'
+      OnClick = PauseClick
+      TabOrder = 1
+    end
+    object GetWidthBtn: TButton
+      Left = 6
+      Height = 25
+      Top = 97
+      Width = 75
+      Caption = 'Get width'
+      OnClick = GetWidthClick
+      TabOrder = 2
+    end
+    object GetHeightBtn: TButton
+      Left = 6
+      Height = 25
+      Top = 126
+      Width = 75
+      Caption = 'Get height'
+      OnClick = GetHeightBtnClick
+      TabOrder = 3
+    end
+    object GetStateBtn: TButton
+      Left = 6
+      Height = 25
+      Top = 155
+      Width = 75
+      Caption = 'Get state'
+      OnClick = GetStateClick
+      TabOrder = 4
+    end
+    object ResumeBtn: TButton
+      Left = 6
+      Height = 25
+      Top = 68
+      Width = 75
+      Caption = 'Resume'
+      OnClick = ResumeClick
+      TabOrder = 5
+    end
+    object GetPosLenBtn: TButton
+      Left = 6
+      Height = 25
+      Top = 182
+      Width = 75
+      Caption = 'Get pos, len'
+      OnClick = GetPosLenClick
+      TabOrder = 6
+    end
+    object Scale10Btn: TButton
+      Left = 6
+      Height = 25
+      Top = 213
+      Width = 75
+      Caption = 'Scale -10%'
+      OnClick = Scale10Click
+      TabOrder = 7
+    end
+    object ScaleFitBtn: TButton
+      Left = 6
+      Height = 25
+      Top = 242
+      Width = 75
+      Caption = 'ScaleFit'
+      OnClick = ScaleFitClick
+      TabOrder = 8
+    end
+    object SnapShotBtn: TButton
+      Left = 6
+      Height = 25
+      Top = 271
+      Width = 75
+      Caption = 'SnapShot'
+      OnClick = SnapShotClick
+      TabOrder = 9
+    end
+    object NextFrameBtn: TButton
+      Left = 6
+      Height = 25
+      Top = 302
+      Width = 75
+      Caption = 'Next Frame'
+      OnClick = NextFrameClick
+      TabOrder = 10
+    end
+    object GetASpectRatioBtn: TButton
+      Left = 94
+      Height = 25
+      Top = 8
+      Width = 75
+      Caption = 'Get Aspect'
+      OnClick = GetASpectRatioClick
+      TabOrder = 11
+    end
+    object SetAsp11Btn: TButton
+      Left = 94
+      Height = 25
+      Top = 39
+      Width = 75
+      Caption = 'Set asp 1:1'
+      OnClick = SetAsp11Click
+      TabOrder = 12
+    end
+    object SetAsp43Btn: TButton
+      Left = 94
+      Height = 25
+      Top = 68
+      Width = 75
+      Caption = 'Set asp 4:3'
+      OnClick = SetAsp43Click
+      TabOrder = 13
+    end
+    object GetVolume: TButton
+      Left = 94
+      Height = 25
+      Top = 97
+      Width = 75
+      Caption = 'Get Volume'
+      OnClick = GetVolumeClick
+      TabOrder = 14
+    end
+    object SetVolumeUp10: TButton
+      Left = 94
+      Height = 25
+      Top = 126
+      Width = 75
+      Caption = 'Volume +10'
+      OnClick = SetVolumeUp10Click
+      TabOrder = 15
+    end
+    object SetVolumeDo10: TButton
+      Left = 94
+      Height = 25
+      Top = 155
+      Width = 75
+      Caption = 'Volume -10'
+      OnClick = SetVolumeDo10Click
+      TabOrder = 16
+    end
+    object GetPlayRateBtn: TButton
+      Left = 94
+      Height = 25
+      Top = 184
+      Width = 75
+      Caption = 'Get Play Rate'
+      OnClick = GetPlayRateBtnClick
+      TabOrder = 17
+    end
+    object SetPlayRate2xBtn: TButton
+      Left = 94
+      Height = 25
+      Top = 213
+      Width = 75
+      Caption = 'Play Rate 2x'
+      OnClick = SetPlayRate2xBtnClick
+      TabOrder = 18
+    end
+    object SetPlayRateHalfBtn: TButton
+      Left = 94
+      Height = 25
+      Top = 242
+      Width = 75
+      Caption = 'Play Rate 1/2'
+      OnClick = SetPlayRateHalfBtnClick
+      TabOrder = 19
+    end
+    object FullScreenYesBtn: TButton
+      Left = 94
+      Height = 25
+      Top = 271
+      Width = 75
+      Caption = 'FullScreen'
+      OnClick = FullScreenYesBtnClick
+      TabOrder = 20
+    end
+    object DeInterlaceBtn: TButton
+      Left = 6
+      Height = 25
+      Top = 333
+      Width = 75
+      Caption = 'DeInterlace'
+      OnClick = DeInterlaceBtnClick
+      TabOrder = 21
+    end
+    object GetAudioChannel: TButton
+      Left = 94
+      Height = 25
+      Top = 302
+      Width = 75
+      Caption = 'Get Audio Ch'
+      OnClick = GetAudioChannelClick
+      TabOrder = 22
+    end
+    object SetAudioChannelLeft: TButton
+      Left = 94
+      Height = 25
+      Top = 333
+      Width = 75
+      Caption = 'Set Audio C L'
+      OnClick = SetAudioChannelLeftClick
+      TabOrder = 23
+    end
+    object SetAudioChannelRight: TButton
+      Left = 94
+      Height = 25
+      Top = 364
+      Width = 75
+      Caption = 'Set Audio C R'
+      OnClick = SetAudioChannelRightClick
+      TabOrder = 24
+    end
+    object SetAudioChannelStereo: TButton
+      Left = 94
+      Height = 25
+      Top = 395
+      Width = 75
+      Caption = 'Set Audio C S'
+      OnClick = SetAudioChannelStereoClick
+      TabOrder = 26
+    end
+    object GetAudioOutListBtn: TButton
+      Left = 6
+      Height = 25
+      Top = 364
+      Width = 75
+      Caption = 'AudioOutList'
+      OnClick = GetAudioOutListBtnClick
+      TabOrder = 25
+    end
+    object GetAudioOutDevEnumBtn: TButton
+      Left = 6
+      Height = 25
+      Top = 395
+      Width = 75
+      Caption = 'AOutDevEnum'
+      OnClick = GetAudioOutDevEnumBtnClick
+      TabOrder = 27
+    end
+    object GetEqPreListBtn: TButton
+      Left = 94
+      Height = 25
+      Top = 456
+      Width = 75
+      Caption = 'EqalizerPreList'
+      OnClick = GetEqPreListBtnClick
+      TabOrder = 28
+    end
+    object SetEqualizerBtn: TButton
+      Left = 94
+      Height = 25
+      Top = 426
+      Width = 75
+      Caption = 'Set Equalizer'
+      OnClick = SetEqualizerBtnClick
+      TabOrder = 29
+    end
+    object ChAudioOut: TButton
+      Left = 6
+      Height = 25
+      Top = 426
+      Width = 75
+      Caption = 'Ch Audio Out'
+      OnClick = ChAudioOutClick
+      TabOrder = 30
+    end
+    object GetAudioTrackListBtn: TButton
+      Left = 6
+      Height = 25
+      Top = 456
+      Width = 75
+      Caption = 'AudioTrackList'
+      OnClick = GetAudioTrackListBtnClick
+      TabOrder = 31
+    end
+    object GetAudioFilterListBtn: TButton
+      Left = 6
+      Height = 25
+      Top = 488
+      Width = 75
+      Caption = 'AudioFilterList'
+      OnClick = GetAudioFilterListBtnClick
+      TabOrder = 32
+    end
+    object GetVideoFilterListBtn: TButton
+      Left = 94
+      Height = 25
+      Top = 488
+      Width = 75
+      Caption = 'VideoFilterList'
+      OnClick = GetVideoFilterListBtnClick
+      TabOrder = 33
+    end
+  end
+  object LB: TListBox
+    Left = 9
+    Height = 176
+    Top = 309
+    Width = 320
+    ItemHeight = 0
+    PopupMenu = LbPopupMenu
+    TabOrder = 1
+  end
+  object MrlEdit: TEdit
+    Left = 8
+    Height = 21
+    Top = 20
+    Width = 320
+    TabOrder = 2
+  end
+  object PasLibVlcPlayer1: TPasLibVlcPlayer
+    Left = 8
+    Height = 202
+    Top = 45
+    BevelOuter = bvNone
+    ParentColor = False
+    TabOrder = 3
+    OnClick = PasLibVlcPlayer1Click
+    OnDblClick = PasLibVlcPlayer1DblClick
+    OnMouseDown = PasLibVlcPlayer1MouseDown
+    OnMouseEnter = PasLibVlcPlayer1MouseEnter
+    OnMouseLeave = PasLibVlcPlayer1MouseLeave
+    OnMouseMove = PasLibVlcPlayer1MouseMove
+    OnMouseUp = PasLibVlcPlayer1MouseUp
+    SnapShotFmt = 'png'
+    OnMediaPlayerMediaChanged = PasLibVlcPlayer1MediaPlayerMediaChanged
+    OnMediaPlayerNothingSpecial = PasLibVlcPlayer1MediaPlayerNothingSpecial
+    OnMediaPlayerOpening = PasLibVlcPlayer1MediaPlayerOpening
+    OnMediaPlayerBuffering = PasLibVlcPlayer1MediaPlayerBuffering
+    OnMediaPlayerPlaying = PasLibVlcPlayer1MediaPlayerPlaying
+    OnMediaPlayerPaused = PasLibVlcPlayer1MediaPlayerPaused
+    OnMediaPlayerStopped = PasLibVlcPlayer1MediaPlayerStopped
+    OnMediaPlayerForward = PasLibVlcPlayer1MediaPlayerForward
+    OnMediaPlayerBackward = PasLibVlcPlayer1MediaPlayerBackward
+    OnMediaPlayerEndReached = PasLibVlcPlayer1MediaPlayerEndReached
+    OnMediaPlayerEncounteredError = PasLibVlcPlayer1MediaPlayerEncounteredError
+    OnMediaPlayerTimeChanged = PasLibVlcPlayer1MediaPlayerTimeChanged
+    OnMediaPlayerPositionChanged = PasLibVlcPlayer1MediaPlayerPositionChanged
+    OnMediaPlayerSeekableChanged = PasLibVlcPlayer1MediaPlayerSeekableChanged
+    OnMediaPlayerPausableChanged = PasLibVlcPlayer1MediaPlayerPausableChanged
+    OnMediaPlayerTitleChanged = PasLibVlcPlayer1MediaPlayerTitleChanged
+    OnMediaPlayerSnapshotTaken = PasLibVlcPlayer1MediaPlayerSnapshotTaken
+    OnMediaPlayerLengthChanged = PasLibVlcPlayer1MediaPlayerLengthChanged
+    OnMediaPlayerVideoOutChanged = PasLibVlcPlayer1MediaPlayerVideoOutChanged
+    OnMediaPlayerScrambledChanged = PasLibVlcPlayer1MediaPlayerScrambledChanged
+    OnMediaPlayerCorked = PasLibVlcPlayer1MediaPlayerCorked
+    OnMediaPlayerUnCorked = PasLibVlcPlayer1MediaPlayerUnCorked
+    OnMediaPlayerMuted = PasLibVlcPlayer1MediaPlayerMuted
+    OnMediaPlayerUnMuted = PasLibVlcPlayer1MediaPlayerUnMuted
+    OnMediaPlayerAudioVolumeChanged = PasLibVlcPlayer1MediaPlayerAudioVolumeChanged
+    OnMediaPlayerEsAdded = PasLibVlcPlayer1MediaPlayerEsAdded
+    OnMediaPlayerEsDeleted = PasLibVlcPlayer1MediaPlayerEsDeleted
+    OnMediaPlayerEsSelected = PasLibVlcPlayer1MediaPlayerEsSelected
+    OnMediaPlayerAudioDevice = PasLibVlcPlayer1MediaPlayerAudioDevice
+    OnMediaPlayerChapterChanged = PasLibVlcPlayer1MediaPlayerChapterChanged
+    OnRendererDiscoveredItemAdded = PasLibVlcPlayer1RendererDiscoveredItemAdded
+    OnRendererDiscoveredItemDeleted = PasLibVlcPlayer1RendererDiscoveredItemDeleted
+    MouseEventsHandler = mehComponent
+  end
+  object ProgPanel: TPanel
+    Left = 8
+    Height = 46
+    Top = 252
+    Width = 320
+    ClientHeight = 46
+    ClientWidth = 320
+    TabOrder = 4
+    object ProgLabel1: TLabel
+      Left = 1
+      Height = 20
+      Top = 25
+      Width = 44
+      Align = alLeft
+      Caption = '00:00:00'
+      ParentColor = False
+    end
+    object ProgLabel2: TLabel
+      Left = 275
+      Height = 20
+      Top = 25
+      Width = 44
+      Align = alRight
+      Caption = '00:00:00'
+      ParentColor = False
+    end
+    object ProgBar: TTrackBar
+      Left = 1
+      Height = 24
+      Top = 1
+      Width = 318
+      OnChange = ProgBarChange
+      Position = 0
+      TickStyle = tsNone
+      Align = alTop
+      TabOrder = 0
+    end
+  end
+  object BtnSelect: TButton
+    Left = 280
+    Height = 19
+    Top = 22
+    Width = 46
+    Caption = 'Select'
+    OnClick = BtnSelectClick
+    TabOrder = 5
+  end
+  object PopupMenu: TPopupMenu
+    left = 16
+    top = 56
+    object a1: TMenuItem
+      Caption = 'a'
+    end
+    object b1: TMenuItem
+      Caption = 'b'
+    end
+    object c1: TMenuItem
+      Caption = 'c'
+    end
+    object d1: TMenuItem
+      Caption = 'd'
+    end
+  end
+  object OpenDialog: TOpenDialog
+    Options = [ofPathMustExist, ofFileMustExist, ofEnableSizing]
+    left = 264
+    top = 56
+  end
+  object SaveDialog: TSaveDialog
+    DefaultExt = '.*.txt'
+    FileName = 'PasLibVlcDemo.txt'
+    left = 20
+    top = 316
+  end
+  object LbPopupMenu: TPopupMenu
+    left = 56
+    top = 316
+    object LbPmClear: TMenuItem
+      Caption = 'Clear'
+      OnClick = LbPmClearClick
+    end
+    object LnPmSaveAs: TMenuItem
+      Caption = 'Save as'
+      OnClick = LnPmSaveAsClick
+    end
+  end
+end

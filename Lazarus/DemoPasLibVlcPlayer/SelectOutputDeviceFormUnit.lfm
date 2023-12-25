@@ -1,0 +1,51 @@
+object SelectOutputDeviceForm: TSelectOutputDeviceForm
+  Left = 266
+  Height = 240
+  Top = 112
+  Width = 370
+  BorderStyle = bsDialog
+  Caption = 'Select output device'
+  ClientHeight = 240
+  ClientWidth = 370
+  Position = poMainFormCenter
+  LCLVersion = '1.4.4.0'
+  object OutputDevicesLB: TListBox
+    Left = 8
+    Height = 200
+    Top = 32
+    Width = 264
+    ItemHeight = 0
+    OnDblClick = OutputDevicesLBDblClick
+    OnDrawItem = OutputDevicesLBDrawItem
+    Style = lbOwnerDrawFixed
+    TabOrder = 0
+  end
+  object OkBtn: TButton
+    Left = 280
+    Height = 25
+    Top = 32
+    Width = 75
+    Caption = 'OK'
+    Default = True
+    OnClick = OkBtnClick
+    TabOrder = 1
+  end
+  object OutputDevicesLabel: TLabel
+    Left = 8
+    Height = 13
+    Top = 12
+    Width = 96
+    Caption = 'OutputDevicesLabel'
+    FocusControl = OutputDevicesLB
+    ParentColor = False
+  end
+  object CancelBtn: TButton
+    Left = 280
+    Height = 25
+    Top = 64
+    Width = 75
+    Caption = 'Cancel'
+    ModalResult = 2
+    TabOrder = 2
+  end
+end

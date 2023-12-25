@@ -1,0 +1,76 @@
+fmt: unknown box type %4.4s (incompletely loaded)
+out: unknown box type mpod (incompletely loaded)
+fmt: elst box found
+out: elst box found
+fmt: STTS table of %u entries
+out: STTS table of 1 entries
+fmt: elst box found
+out: elst box found
+fmt: STTS table of %u entries
+out: STTS table of 1 entries
+fmt: decoded zero sample
+out: decoded zero sample
+fmt: DirectWrite initialization failed. Falling back to GDI/Uniscribe
+out: DirectWrite initialization failed. Falling back to GDI/Uniscribe
+fmt: DirectWrite initialization failed. Falling back to GDI/Uniscribe
+out: DirectWrite initialization failed. Falling back to GDI/Uniscribe
+fmt: plane %d not aligned: disabling direct rendering
+out: plane 0 not aligned: disabling direct rendering
+fmt: playback too late (%lld): up-sampling
+out: playback too late (88868): up-sampling
+fmt: playback way too late (%lld): flushing buffers
+out: playback way too late (186741): flushing buffers
+fmt: playback way too early (%lld): playing silence
+out: playback way too early (-351381): playing silence
+fmt: playback too late (%lld): up-sampling
+out: playback too late (72601): up-sampling
+fmt: timing screwed (drift: %lld us): stopping resampling
+out: timing screwed (drift: 149154 us): stopping resampling
+fmt: playback too late (%lld): up-sampling
+out: playback too late (178542): up-sampling
+fmt: playback way too late (%lld): flushing buffers
+out: playback way too late (211953): flushing buffers
+fmt: playback way too early (%lld): playing silence
+out: playback way too early (-337853): playing silence
+fmt: playback too late (%lld): up-sampling
+out: playback too late (76615): up-sampling
+fmt: timing screwed (drift: %lld us): stopping resampling
+out: timing screwed (drift: 157122 us): stopping resampling
+fmt: playback way too late (%lld): flushing buffers
+out: playback way too late (182533): flushing buffers
+fmt: playback way too early (%lld): playing silence
+out: playback way too early (-342705): playing silence
+fmt: playback too late (%lld): up-sampling
+out: playback too late (76615): up-sampling
+fmt: playback way too late (%lld): flushing buffers
+out: playback way too late (182511): flushing buffers
+fmt: playback way too early (%lld): playing silence
+out: playback way too early (-325191): playing silence
+fmt: playback too late (%lld): up-sampling
+out: playback too late (72601): up-sampling
+fmt: timing screwed (drift: %lld us): stopping resampling
+out: timing screwed (drift: 149109 us): stopping resampling
+fmt: playback too late (%lld): up-sampling
+out: playback too late (149498): up-sampling
+fmt: playback way too late (%lld): flushing buffers
+out: playback way too late (182519): flushing buffers
+fmt: playback way too early (%lld): playing silence
+out: playback way too early (-331630): playing silence
+fmt: playback too late (%lld): up-sampling
+out: playback too late (84210): up-sampling
+fmt: playback way too late (%lld): flushing buffers
+out: playback way too late (182473): flushing buffers
+fmt: playback way too early (%lld): playing silence
+out: playback way too early (-339726): playing silence
+fmt: playback too late (%lld): up-sampling
+out: playback too late (76601): up-sampling
+fmt: playback way too late (%lld): flushing buffers
+out: playback way too late (182451): flushing buffers
+fmt: playback way too early (%lld): playing silence
+out: playback way too early (-356165): playing silence
+fmt: playback too late (%lld): up-sampling
+out: playback too late (84211): up-sampling
+fmt: playback way too late (%lld): flushing buffers
+out: playback way too late (190038): flushing buffers
+fmt: playback way too early (%lld): playing silence
+out: playback way too early (-341018): playing silence

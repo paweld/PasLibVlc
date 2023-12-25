@@ -1,0 +1,124 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{45654adb-d240-4043-a769-10b6e8189706}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Projects Include="DemoPasLibVlcMediaListPlayer\DemoPasLibVlcMediaListPlayer.dproj" />
+    <Projects Include="DemoPasLibVlcPlayerPauseAtStart\DemoPasLibVlcPlayerPauseAtStart.dproj" />
+    <Projects Include="DemoPasLibVlcPlayer\DemoPasLibVlcPlayer.dproj" />
+    <Projects Include="DemoPasLibVlc\DemoPasLibVlc.dproj" />
+    <Projects Include="DemoPlayViaPipe\DemoPlayViaPipe.dproj" />
+    <Projects Include="DemoStreamScreen\DemoStreamScreen.dproj" />
+    <Projects Include="DemoStreamVideo\DemoStreamVideo.dproj" />
+    <Projects Include="DemoUseLog\DemoUseLog.dproj" />
+    <Projects Include="DemoVideoCallBacks\DemoVideoCallBacks.dproj" />
+    <Projects Include="PasLibVlcPlayer.dproj" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject xmlns=""><Default.Personality></Default.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="PasLibVlcPlayer">
+    <MSBuild Projects="PasLibVlcPlayer.dproj" Targets="" />
+  </Target>
+  <Target Name="PasLibVlcPlayer:Clean">
+    <MSBuild Projects="PasLibVlcPlayer.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="PasLibVlcPlayer:Make">
+    <MSBuild Projects="PasLibVlcPlayer.dproj" Targets="Make" />
+  </Target>
+  <Target Name="DemoPasLibVlc">
+    <MSBuild Projects="DemoPasLibVlc\DemoPasLibVlc.dproj" Targets="" />
+  </Target>
+  <Target Name="DemoPasLibVlc:Clean">
+    <MSBuild Projects="DemoPasLibVlc\DemoPasLibVlc.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="DemoPasLibVlc:Make">
+    <MSBuild Projects="DemoPasLibVlc\DemoPasLibVlc.dproj" Targets="Make" />
+  </Target>
+  <Target Name="DemoPasLibVlcPlayer">
+    <MSBuild Projects="DemoPasLibVlcPlayer\DemoPasLibVlcPlayer.dproj" Targets="" />
+  </Target>
+  <Target Name="DemoPasLibVlcPlayer:Clean">
+    <MSBuild Projects="DemoPasLibVlcPlayer\DemoPasLibVlcPlayer.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="DemoPasLibVlcPlayer:Make">
+    <MSBuild Projects="DemoPasLibVlcPlayer\DemoPasLibVlcPlayer.dproj" Targets="Make" />
+  </Target>
+  <Target Name="DemoPasLibVlcPlayerPauseAtStart">
+    <MSBuild Projects="DemoPasLibVlcPlayerPauseAtStart\DemoPasLibVlcPlayerPauseAtStart.dproj" Targets="" />
+  </Target>
+  <Target Name="DemoPasLibVlcPlayerPauseAtStart:Clean">
+    <MSBuild Projects="DemoPasLibVlcPlayerPauseAtStart\DemoPasLibVlcPlayerPauseAtStart.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="DemoPasLibVlcPlayerPauseAtStart:Make">
+    <MSBuild Projects="DemoPasLibVlcPlayerPauseAtStart\DemoPasLibVlcPlayerPauseAtStart.dproj" Targets="Make" />
+  </Target>
+  <Target Name="DemoPasLibVlcMediaListPlayer">
+    <MSBuild Projects="DemoPasLibVlcMediaListPlayer\DemoPasLibVlcMediaListPlayer.dproj" Targets="" />
+  </Target>
+  <Target Name="DemoPasLibVlcMediaListPlayer:Clean">
+    <MSBuild Projects="DemoPasLibVlcMediaListPlayer\DemoPasLibVlcMediaListPlayer.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="DemoPasLibVlcMediaListPlayer:Make">
+    <MSBuild Projects="DemoPasLibVlcMediaListPlayer\DemoPasLibVlcMediaListPlayer.dproj" Targets="Make" />
+  </Target>
+  <Target Name="DemoPlayViaPipe">
+    <MSBuild Projects="DemoPlayViaPipe\DemoPlayViaPipe.dproj" Targets="" />
+  </Target>
+  <Target Name="DemoPlayViaPipe:Clean">
+    <MSBuild Projects="DemoPlayViaPipe\DemoPlayViaPipe.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="DemoPlayViaPipe:Make">
+    <MSBuild Projects="DemoPlayViaPipe\DemoPlayViaPipe.dproj" Targets="Make" />
+  </Target>
+  <Target Name="DemoStreamVideo">
+    <MSBuild Projects="DemoStreamVideo\DemoStreamVideo.dproj" Targets="" />
+  </Target>
+  <Target Name="DemoStreamVideo:Clean">
+    <MSBuild Projects="DemoStreamVideo\DemoStreamVideo.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="DemoStreamVideo:Make">
+    <MSBuild Projects="DemoStreamVideo\DemoStreamVideo.dproj" Targets="Make" />
+  </Target>
+  <Target Name="DemoStreamScreen">
+    <MSBuild Projects="DemoStreamScreen\DemoStreamScreen.dproj" Targets="" />
+  </Target>
+  <Target Name="DemoStreamScreen:Clean">
+    <MSBuild Projects="DemoStreamScreen\DemoStreamScreen.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="DemoStreamScreen:Make">
+    <MSBuild Projects="DemoStreamScreen\DemoStreamScreen.dproj" Targets="Make" />
+  </Target>
+  <Target Name="DemoVideoCallBacks">
+    <MSBuild Projects="DemoVideoCallBacks\DemoVideoCallBacks.dproj" Targets="" />
+  </Target>
+  <Target Name="DemoVideoCallBacks:Clean">
+    <MSBuild Projects="DemoVideoCallBacks\DemoVideoCallBacks.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="DemoVideoCallBacks:Make">
+    <MSBuild Projects="DemoVideoCallBacks\DemoVideoCallBacks.dproj" Targets="Make" />
+  </Target>
+  <Target Name="DemoUseLog">
+    <MSBuild Projects="DemoUseLog\DemoUseLog.dproj" Targets="" />
+  </Target>
+  <Target Name="DemoUseLog:Clean">
+    <MSBuild Projects="DemoUseLog\DemoUseLog.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="DemoUseLog:Make">
+    <MSBuild Projects="DemoUseLog\DemoUseLog.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="PasLibVlcPlayer;DemoPasLibVlc;DemoPasLibVlcPlayer;DemoPasLibVlcPlayerPauseAtStart;DemoPasLibVlcMediaListPlayer;DemoPlayViaPipe;DemoStreamVideo;DemoStreamScreen;DemoVideoCallBacks;DemoUseLog" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="PasLibVlcPlayer:Clean;DemoPasLibVlc:Clean;DemoPasLibVlcPlayer:Clean;DemoPasLibVlcPlayerPauseAtStart:Clean;DemoPasLibVlcMediaListPlayer:Clean;DemoPlayViaPipe:Clean;DemoStreamVideo:Clean;DemoStreamScreen:Clean;DemoVideoCallBacks:Clean;DemoUseLog:Clean" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="PasLibVlcPlayer:Make;DemoPasLibVlc:Make;DemoPasLibVlcPlayer:Make;DemoPasLibVlcPlayerPauseAtStart:Make;DemoPasLibVlcMediaListPlayer:Make;DemoPlayViaPipe:Make;DemoStreamVideo:Make;DemoStreamScreen:Make;DemoVideoCallBacks:Make;DemoUseLog:Make" />
+  </Target>
+  <Import Condition="Exists('$(MSBuildBinPath)\Borland.Group.Targets')" Project="$(MSBuildBinPath)\Borland.Group.Targets" />
+</Project>

@@ -1,0 +1,37 @@
+package PasLibVlcPlayer;
+
+{$R *.RES}
+{$ALIGN ON}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 4}
+{$IMAGEBASE $00400000}
+{$DESCRIPTION 'PasLibVlcPlayer design time package'}
+{$IMPLICITBUILD ON}
+{$DEFINE RELEASE}
+
+requires
+  vcl40;
+
+contains
+  PasLibVlcUnit in '..\source\PasLibVlcUnit.pas',
+  PasLibVlcClassUnit in '..\source\PasLibVlcClassUnit.pas',
+  PasLibVlcPlayerUnit in '..\source.vcl\PasLibVlcPlayerUnit.pas';
+
+end.

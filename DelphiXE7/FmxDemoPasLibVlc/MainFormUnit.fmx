@@ -1,0 +1,39 @@
+object MainForm: TMainForm
+  Left = 0
+  Top = 0
+  Caption = 'FmxDemoPasLibVlc'
+  ClientHeight = 480
+  ClientWidth = 640
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnClose = FormClose
+  DesignerMasterStyle = 0
+  object MainMenu: TMainMenu
+    Left = 128
+    Top = 80
+    object MenuFile: TMenuItem
+      Text = 'File'
+      object MenuOpen: TMenuItem
+        Locked = True
+        ShortCut = 16463
+        Text = 'Open'
+        OnClick = MenuOpenClick
+      end
+      object MenuQuit: TMenuItem
+        Locked = True
+        ShortCut = 16465
+        Text = 'Quit'
+        OnClick = MenuQuitClick
+      end
+    end
+  end
+  object OpenDialog: TOpenDialog
+    InitialDir = 'C:\_LibXE\vlc\_testFiles'
+    Left = 40
+    Top = 80
+  end
+end

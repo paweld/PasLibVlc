@@ -1,0 +1,13 @@
+inherited MainForm_iPhone47in: TMainForm_iPhone47in
+  ClientHeight = 647
+  ClientWidth = 375
+  DesignerMasterStyle = 0
+  inherited Panel1: TPanel
+    Position.X = 255.000000000000000000
+    Size.Height = 647.000000000000000000
+  end
+  inherited FmxPasLibVlcPlayer1: TFmxPasLibVlcPlayer
+    Size.Width = 255.000000000000000000
+    Size.Height = 647.000000000000000000
+  end
+end

@@ -1,0 +1,18 @@
+object FullScreenForm: TFullScreenForm
+  Left = 0
+  Height = 436
+  Top = 0
+  Width = 639
+  Align = alClient
+  BorderIcons = []
+  BorderStyle = bsNone
+  Color = clBlack
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  FormStyle = fsStayOnTop
+  KeyPreview = True
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  LCLVersion = '1.2.6.0'
+end

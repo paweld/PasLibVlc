@@ -1,0 +1,26 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = PasLibVlcPlayer.bpl DemoPasLibVlc.exe DemoPasLibVlcPlayer.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+DemoPasLibVlc.exe: DemoPasLibVlc\DemoPasLibVlc.dpr
+  $(DCC)
+
+DemoPasLibVlcPlayer.exe: DemoPasLibVlcPlayer\DemoPasLibVlcPlayer.dpr
+  $(DCC)
+
+PasLibVlcPlayer.bpl: PasLibVlcPlayer.dpk
+  $(DCC)
+
+

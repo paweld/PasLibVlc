@@ -1,0 +1,70 @@
+object SetEqualizerPresetForm: TSetEqualizerPresetForm
+  Left = 243
+  Height = 293
+  Top = 109
+  Width = 468
+  Caption = 'Set Equalizer Preset'
+  ClientHeight = 293
+  ClientWidth = 468
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Position = poMainFormCenter
+  LCLVersion = '1.2.6.0'
+  object PresetListLabel: TLabel
+    Left = 16
+    Height = 13
+    Top = 13
+    Width = 40
+    Caption = 'Presets:'
+    FocusControl = PresetListLB
+    ParentColor = False
+  end
+  object BandInfoLabel: TLabel
+    Left = 140
+    Height = 13
+    Top = 13
+    Width = 83
+    Caption = 'Preset band info:'
+    FocusControl = BandInfoLB
+    ParentColor = False
+  end
+  object PresetListLB: TListBox
+    Left = 16
+    Height = 245
+    Top = 32
+    Width = 105
+    ItemHeight = 0
+    OnClick = PresetListLBClick
+    TabOrder = 0
+  end
+  object OkBtn: TButton
+    Left = 380
+    Height = 25
+    Top = 13
+    Width = 75
+    Caption = 'OK'
+    Default = True
+    ModalResult = 1
+    TabOrder = 1
+  end
+  object CancelBtn: TButton
+    Left = 380
+    Height = 25
+    Top = 44
+    Width = 75
+    Cancel = True
+    Caption = 'Cancel'
+    ModalResult = 2
+    TabOrder = 2
+  end
+  object BandInfoLB: TListBox
+    Left = 140
+    Height = 245
+    Top = 32
+    Width = 221
+    ItemHeight = 0
+    TabOrder = 3
+  end
+end

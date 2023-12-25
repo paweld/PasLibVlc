@@ -1,0 +1,13 @@
+object PlayForm: TPlayForm
+  Left = 0
+  Top = 0
+  Border.Styling = False
+  BorderIcons = []
+  Caption = 'Form1'
+  ClientHeight = 200
+  ClientWidth = 200
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+end

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Makefile Value="2"/>
+  <Params Value=" -Fu../source;../source.vcl;.  -MDelphi -Scghi -CX -O4 -g -gl -gh -Xg -l -vewnhibq PasLibVlcPlayer.pas"/>
+</CONFIG>

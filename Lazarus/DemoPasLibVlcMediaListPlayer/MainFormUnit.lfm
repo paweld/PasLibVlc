@@ -1,0 +1,216 @@
+object MainForm: TMainForm
+  Left = 370
+  Height = 460
+  Top = 130
+  Width = 767
+  Caption = 'DemoPasLibVlcMediaListPlayer'
+  ClientHeight = 460
+  ClientWidth = 767
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  OnCreate = FormCreate
+  OnMouseDown = FormMouseDown
+  Position = poDesktopCenter
+  LCLVersion = '2.0.0.4'
+  object BottomPanel: TPanel
+    Left = 0
+    Height = 53
+    Top = 407
+    Width = 767
+    Align = alBottom
+    ClientHeight = 53
+    ClientWidth = 767
+    TabOrder = 0
+    object PlayBtn: TButton
+      Left = 10
+      Height = 25
+      Top = 14
+      Width = 50
+      Caption = 'Play'
+      OnClick = PlayBtnClick
+      TabOrder = 0
+    end
+    object PrevBtn: TButton
+      Left = 168
+      Height = 25
+      Top = 14
+      Width = 50
+      Caption = 'Prev'
+      OnClick = PrevBtnClick
+      TabOrder = 1
+    end
+    object NextBtn: TButton
+      Left = 226
+      Height = 25
+      Top = 14
+      Width = 50
+      Caption = 'Next'
+      OnClick = NextBtnClick
+      TabOrder = 2
+    end
+    object StopBtn: TButton
+      Left = 288
+      Height = 25
+      Top = 14
+      Width = 50
+      Caption = 'Stop'
+      OnClick = StopBtnClick
+      TabOrder = 3
+    end
+    object ClearBtn: TButton
+      Left = 408
+      Height = 25
+      Top = 14
+      Width = 75
+      Caption = 'Clear'
+      OnClick = ClearBtnClick
+      TabOrder = 4
+    end
+    object PlayModeDefaultBtn: TButton
+      Left = 496
+      Height = 25
+      Top = 14
+      Width = 75
+      Caption = 'Play Default'
+      OnClick = PlayModeDefaultBtnClick
+      TabOrder = 5
+    end
+    object PlayModeLoopBtn: TButton
+      Left = 584
+      Height = 25
+      Top = 14
+      Width = 75
+      Caption = 'Play Loop'
+      OnClick = PlayModeLoopBtnClick
+      TabOrder = 6
+    end
+    object PlayModeRepeatBtn: TButton
+      Left = 672
+      Height = 25
+      Top = 14
+      Width = 75
+      Caption = 'Play Repeat'
+      OnClick = PlayModeRepeatBtnClick
+      TabOrder = 7
+    end
+    object PauseBtn: TButton
+      Left = 88
+      Height = 25
+      Top = 14
+      Width = 50
+      Caption = 'Pause'
+      OnClick = PauseBtnClick
+      TabOrder = 8
+    end
+  end
+  object RightPanel: TPanel
+    Left = 429
+    Height = 407
+    Top = 0
+    Width = 338
+    Align = alRight
+    BevelOuter = bvNone
+    ClientHeight = 407
+    ClientWidth = 338
+    TabOrder = 1
+    object PlayListBox: TListBox
+      Left = 8
+      Height = 207
+      Top = 8
+      Width = 322
+      Align = alTop
+      BorderSpacing.Around = 8
+      ItemHeight = 0
+      OnClick = PlayListBoxClick
+      ScrollWidth = 318
+      TabOrder = 0
+    end
+    object EventsMemo: TMemo
+      Left = 8
+      Height = 176
+      Top = 223
+      Width = 322
+      Align = alClient
+      BorderSpacing.Around = 8
+      ScrollBars = ssBoth
+      TabOrder = 1
+      WordWrap = False
+    end
+  end
+  object LeftPanel: TPanel
+    Left = 0
+    Height = 407
+    Top = 0
+    Width = 429
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 407
+    ClientWidth = 429
+    TabOrder = 2
+    object Player: TPasLibVlcPlayer
+      Left = 8
+      Height = 337
+      Top = 8
+      Width = 413
+      Align = alClient
+      BorderSpacing.Around = 8
+      BevelOuter = bvNone
+      ParentColor = False
+      TabOrder = 0
+      OnMouseDown = PlayerMouseDown
+      VideoOnTop = True
+      UseOverlay = True
+      SnapShotFmt = 'png'
+      OnMediaPlayerMediaChanged = PlayerMediaPlayerMediaChanged
+      OnMediaPlayerEndReached = PlayerMediaPlayerEndReached
+      OnMediaPlayerTimeChanged = PlayerMediaPlayerTimeChanged
+      OnMediaPlayerPositionChanged = PlayerMediaPlayerPositionChanged
+      OnMediaPlayerLengthChanged = PlayerMediaPlayerLengthChanged
+      MouseEventsHandler = mehComponent
+    end
+    object InfoPanel: TPanel
+      Left = 8
+      Height = 46
+      Top = 353
+      Width = 413
+      Align = alBottom
+      BorderSpacing.Around = 8
+      ClientHeight = 46
+      ClientWidth = 413
+      TabOrder = 1
+      object InfoTrackBar: TTrackBar
+        Left = 1
+        Height = 22
+        Top = 23
+        Width = 411
+        Frequency = 5
+        Max = 100
+        OnChange = InfoTrackBarChange
+        PageSize = 10
+        Position = 0
+        ShowSelRange = False
+        Align = alClient
+        TabOrder = 0
+      end
+      object TimePanel: TPanel
+        Left = 1
+        Height = 22
+        Top = 1
+        Width = 411
+        Align = alTop
+        BevelOuter = bvNone
+        TabOrder = 1
+      end
+    end
+  end
+  object PasLibVlcMediaList1: TPasLibVlcMediaList
+    Player = Player
+    OnItemAdded = PasLibVlcMediaList1ItemAdded
+    OnItemDeleted = PasLibVlcMediaList1ItemDeleted
+    OnNextItemSet = PasLibVlcMediaList1NextItemSet
+    left = 520
+    top = 24
+  end
+end

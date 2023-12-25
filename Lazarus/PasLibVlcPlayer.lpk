@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="4">
+    <PathDelim Value="\"/>
+    <Name Value="PasLibVlcPlayer"/>
+    <Type Value="RunAndDesignTime"/>
+    <AddToProjectUsesSection Value="True"/>
+    <Author Value="Robert Jędrzejczyk"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="..\source;..\source.vcl"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+      <Parsing>
+        <SyntaxOptions>
+          <SyntaxMode Value="Delphi"/>
+        </SyntaxOptions>
+      </Parsing>
+      <CodeGeneration>
+        <SmartLinkUnit Value="True"/>
+        <RelocatableUnit Value="True"/>
+        <Optimizations>
+          <OptimizationLevel Value="4"/>
+        </Optimizations>
+      </CodeGeneration>
+      <Linking>
+        <Debugging>
+          <UseHeaptrc Value="True"/>
+          <UseExternalDbgSyms Value="True"/>
+        </Debugging>
+      </Linking>
+      <Other>
+        <CreateMakefileOnBuild Value="True"/>
+      </Other>
+    </CompilerOptions>
+    <Description Value="VideoLAN libvlc library interface and components."/>
+    <Version Major="3" Release="7"/>
+    <Files Count="2">
+      <Item1>
+        <Filename Value="..\source\PasLibVlcUnit.pas"/>
+        <UnitName Value="PasLibVlcUnit"/>
+      </Item1>
+      <Item2>
+        <Filename Value="..\source.vcl\PasLibVlcPlayerUnit.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="PasLibVlcPlayerUnit"/>
+      </Item2>
+    </Files>
+    <RequiredPkgs Count="2">
+      <Item1>
+        <PackageName Value="LCL"/>
+        <MinVersion Major="1" Valid="True"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="FCL"/>
+        <MinVersion Major="1" Valid="True"/>
+      </Item2>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <CustomOptions Items="ExternHelp" Version="2">
+      <_ExternHelp Items="Count"/>
+    </CustomOptions>
+  </Package>
+</CONFIG>

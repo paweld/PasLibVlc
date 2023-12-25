@@ -1,0 +1,13 @@
+inherited MainForm_LgXhdpiPh: TMainForm_LgXhdpiPh
+  ClientHeight = 695
+  ClientWidth = 450
+  DesignerMasterStyle = 0
+  inherited Panel1: TPanel
+    Position.X = 330.000000000000000000
+    Size.Height = 695.000000000000000000
+  end
+  inherited FmxPasLibVlcPlayer1: TFmxPasLibVlcPlayer
+    Size.Width = 330.000000000000000000
+    Size.Height = 695.000000000000000000
+  end
+end

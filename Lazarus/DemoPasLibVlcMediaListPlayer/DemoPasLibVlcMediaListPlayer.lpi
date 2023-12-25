@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <General>
+      <Flags>
+        <MainUnitHasUsesSectionForAllUnits Value="False"/>
+        <MainUnitHasCreateFormStatements Value="False"/>
+        <MainUnitHasTitleStatement Value="False"/>
+      </Flags>
+      <MainUnit Value="0"/>
+      <Title Value="DemoPasLibVlcMediaListPlayer"/>
+      <UseAppBundle Value="False"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+    </General>
+    <i18n>
+      <EnableI18N LFM="False"/>
+    </i18n>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <MajorVersionNr Value="1"/>
+      <Language Value="0415"/>
+      <StringTable CompanyName="Robert Jędrzejczyk" FileDescription="DemoPasLibVlcMediaListPlayer" InternalName="DemoPasLibVlcMediaListPlayer" LegalCopyright="Robert Jędrzejczyk" LegalTrademarks="Robert Jędrzejczyk" OriginalFilename="DemoPasLibVlcMediaListPlayer" ProductName="DemoPasLibVlcMediaListPlayer"/>
+    </VersionInfo>
+    <BuildModes Count="1" Active="Default">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="1">
+        <Mode0 Name="default"/>
+      </Modes>
+    </RunParams>
+    <RequiredPackages Count="2">
+      <Item1>
+        <PackageName Value="PasLibVlcPlayer"/>
+        <MinVersion Valid="True"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="LCL"/>
+      </Item2>
+    </RequiredPackages>
+    <Units Count="25">
+      <Unit0>
+        <Filename Value="DemoPasLibVlcMediaListPlayer.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="53" Y="6"/>
+        <UsageCount Value="30"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="MainFormUnit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MainForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="205"/>
+        <CursorPos X="3" Y="211"/>
+        <UsageCount Value="30"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="..\..\source\PasLibVlcPlayerUnit.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="3982"/>
+        <CursorPos X="57" Y="3985"/>
+        <UsageCount Value="20"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="C:\lazarus\lcl\controls.pp"/>
+        <UnitName Value="Controls"/>
+        <TopLine Value="1816"/>
+        <CursorPos X="47" Y="1839"/>
+        <UsageCount Value="13"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="C:\lazarus\lcl\lcltype.pp"/>
+        <UnitName Value="LCLType"/>
+        <TopLine Value="2532"/>
+        <CursorPos X="3" Y="2555"/>
+        <UsageCount Value="13"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="C:\lazarus\lcl\interfaces\win32\win32object.inc"/>
+        <TopLine Value="381"/>
+        <CursorPos X="88" Y="385"/>
+        <UsageCount Value="10"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="C:\lazarus\lcl\include\interfacebase.inc"/>
+        <TopLine Value="31"/>
+        <CursorPos Y="49"/>
+        <UsageCount Value="10"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="C:\lazarus\lcl\include\control.inc"/>
+        <TopLine Value="3619"/>
+        <CursorPos Y="3640"/>
+        <UsageCount Value="10"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="C:\lazarus\lcl\include\customlistbox.inc"/>
+        <TopLine Value="270"/>
+        <CursorPos Y="276"/>
+        <UsageCount Value="10"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="C:\lazarus\lcl\include\wincontrol.inc"/>
+        <TopLine Value="5226"/>
+        <CursorPos Y="5242"/>
+        <UsageCount Value="10"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="C:\lazarus\lcl\interfaces\win32\win32listsl.inc"/>
+        <TopLine Value="222"/>
+        <CursorPos Y="239"/>
+        <UsageCount Value="10"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="C:\lazarus\lcl\lclmessageglue.pas"/>
+        <UnitName Value="LCLMessageGlue"/>
+        <TopLine Value="101"/>
+        <CursorPos Y="121"/>
+        <UsageCount Value="10"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="C:\lazarus\lcl\interfaces\win32\win32callback.inc"/>
+        <TopLine Value="2428"/>
+        <CursorPos X="59" Y="2432"/>
+        <UsageCount Value="10"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="..\..\source\PasLibVlcUnit.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="10985"/>
+        <CursorPos X="35" Y="10970"/>
+        <UsageCount Value="20"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="..\..\source\compiler.inc"/>
+        <CursorPos X="16" Y="5"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="C:\lazarus\fpc\2.4.2\source\rtl\win\wininc\ascdef.inc"/>
+        <TopLine Value="359"/>
+        <CursorPos X="6" Y="262"/>
+        <UsageCount Value="10"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="..\..\source\PasLibVlcClassUnit.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="28"/>
+        <CursorPos X="25" Y="42"/>
+        <UsageCount Value="20"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="C:\lazarus\fpc\2.4.2\source\rtl\objpas\classes\classesh.inc"/>
+        <TopLine Value="1574"/>
+        <CursorPos X="15" Y="1590"/>
+        <UsageCount Value="10"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="C:\lazarus\components\lazutils\lazfileutils.pas"/>
+        <UnitName Value="LazFileUtils"/>
+        <TopLine Value="1105"/>
+        <CursorPos X="45" Y="1134"/>
+        <UsageCount Value="10"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="C:\lazarus\components\lazutils\fileutil.pas"/>
+        <UnitName Value="FileUtil"/>
+        <TopLine Value="43"/>
+        <CursorPos X="23" Y="64"/>
+        <UsageCount Value="10"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="C:\lazarus\components\lazutils\winfileutil.inc"/>
+        <TopLine Value="179"/>
+        <CursorPos X="62" Y="200"/>
+        <UsageCount Value="10"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="C:\lazarus\fpc\2.6.0\source\rtl\objpas\sysutils\sysutilh.inc"/>
+        <TopLine Value="236"/>
+        <CursorPos X="12" Y="249"/>
+        <UsageCount Value="10"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="..\PasLibVlcPlayer.pas"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <CursorPos X="18" Y="10"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="C:\lazarus\packager\registration\fcllaz.pas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="..\..\source.vcl\PasLibVlcPlayerUnit.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2156"/>
+        <CursorPos X="25" Y="2161"/>
+        <UsageCount Value="20"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit24>
+    </Units>
+    <JumpHistory Count="5" HistoryIndex="4">
+      <Position1>
+        <Filename Value="MainFormUnit.pas"/>
+        <Caret Line="139" TopLine="103"/>
+      </Position1>
+      <Position2>
+        <Filename Value="MainFormUnit.pas"/>
+        <Caret Line="136" Column="3" TopLine="103"/>
+      </Position2>
+      <Position3>
+        <Filename Value="MainFormUnit.pas"/>
+        <Caret Line="207" TopLine="205"/>
+      </Position3>
+      <Position4>
+        <Filename Value="MainFormUnit.pas"/>
+        <Caret Line="219" Column="3" TopLine="205"/>
+      </Position4>
+      <Position5>
+        <Filename Value="MainFormUnit.pas"/>
+        <Caret Line="225" Column="3" TopLine="205"/>
+      </Position5>
+    </JumpHistory>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="DemoPasLibVlcMediaListPlayer"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      <SrcPath Value="..\..\source"/>
+    </SearchPaths>
+    <Parsing>
+      <SyntaxOptions>
+        <SyntaxMode Value="Delphi"/>
+        <UseAnsiStrings Value="False"/>
+      </SyntaxOptions>
+    </Parsing>
+    <CodeGeneration>
+      <SmartLinkUnit Value="True"/>
+      <RelocatableUnit Value="True"/>
+      <Optimizations>
+        <OptimizationLevel Value="4"/>
+        <VariablesInRegisters Value="True"/>
+        <UncertainOptimizations Value="True"/>
+      </Optimizations>
+      <SmallerCode Value="True"/>
+    </CodeGeneration>
+    <Linking>
+      <Debugging>
+        <UseHeaptrc Value="True"/>
+        <UseExternalDbgSyms Value="True"/>
+      </Debugging>
+      <LinkSmart Value="True"/>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+    <Other>
+      <WriteFPCLogo Value="False"/>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

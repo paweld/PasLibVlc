@@ -1,0 +1,84 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{93B2DC73-657C-4BDE-9142-B5DC0D8A16D9}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="PasLibVlcPlayer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DemoPasLibVlc\DemoPasLibVlc.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DemoPasLibVlcPlayer\DemoPasLibVlcPlayer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FmxDemoPasLibVlc\FmxDemoPasLibVlc.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FmxDemoPasLibVlcPlayer\FmxDemoPasLibVlcPlayer.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="PasLibVlcPlayer">
+        <MSBuild Projects="PasLibVlcPlayer.dproj"/>
+    </Target>
+    <Target Name="PasLibVlcPlayer:Clean">
+        <MSBuild Projects="PasLibVlcPlayer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PasLibVlcPlayer:Make">
+        <MSBuild Projects="PasLibVlcPlayer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DemoPasLibVlc">
+        <MSBuild Projects="DemoPasLibVlc\DemoPasLibVlc.dproj"/>
+    </Target>
+    <Target Name="DemoPasLibVlc:Clean">
+        <MSBuild Projects="DemoPasLibVlc\DemoPasLibVlc.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DemoPasLibVlc:Make">
+        <MSBuild Projects="DemoPasLibVlc\DemoPasLibVlc.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DemoPasLibVlcPlayer">
+        <MSBuild Projects="DemoPasLibVlcPlayer\DemoPasLibVlcPlayer.dproj"/>
+    </Target>
+    <Target Name="DemoPasLibVlcPlayer:Clean">
+        <MSBuild Projects="DemoPasLibVlcPlayer\DemoPasLibVlcPlayer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DemoPasLibVlcPlayer:Make">
+        <MSBuild Projects="DemoPasLibVlcPlayer\DemoPasLibVlcPlayer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FmxDemoPasLibVlc">
+        <MSBuild Projects="FmxDemoPasLibVlc\FmxDemoPasLibVlc.dproj"/>
+    </Target>
+    <Target Name="FmxDemoPasLibVlc:Clean">
+        <MSBuild Projects="FmxDemoPasLibVlc\FmxDemoPasLibVlc.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FmxDemoPasLibVlc:Make">
+        <MSBuild Projects="FmxDemoPasLibVlc\FmxDemoPasLibVlc.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FmxDemoPasLibVlcPlayer">
+        <MSBuild Projects="FmxDemoPasLibVlcPlayer\FmxDemoPasLibVlcPlayer.dproj"/>
+    </Target>
+    <Target Name="FmxDemoPasLibVlcPlayer:Clean">
+        <MSBuild Projects="FmxDemoPasLibVlcPlayer\FmxDemoPasLibVlcPlayer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FmxDemoPasLibVlcPlayer:Make">
+        <MSBuild Projects="FmxDemoPasLibVlcPlayer\FmxDemoPasLibVlcPlayer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="PasLibVlcPlayer;DemoPasLibVlc;DemoPasLibVlcPlayer;FmxDemoPasLibVlc;FmxDemoPasLibVlcPlayer"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="PasLibVlcPlayer:Clean;DemoPasLibVlc:Clean;DemoPasLibVlcPlayer:Clean;FmxDemoPasLibVlc:Clean;FmxDemoPasLibVlcPlayer:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="PasLibVlcPlayer:Make;DemoPasLibVlc:Make;DemoPasLibVlcPlayer:Make;FmxDemoPasLibVlc:Make;FmxDemoPasLibVlcPlayer:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
