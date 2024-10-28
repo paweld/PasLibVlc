@@ -1,7 +1,7 @@
 (*
  * PasLibVlcClassUnit.pas
  *
- * Last modified: 2020.07.05
+ * Last modified: 2024.01.15
  *
  * author: Robert Jędrzejczyk
  * e-mail: robert@prog.olsztyn.pl
@@ -9,7 +9,7 @@
  *
  *******************************************************************************
  *
- * Copyright (c) 2020 Robert Jędrzejczyk
+ * Copyright (c) 2024 Robert Jędrzejczyk
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -145,6 +145,7 @@ type
     destructor Destroy; override;
 
     procedure AddOption(option : string);
+    procedure DelOption(option : string);
 
     property Handle     : libvlc_instance_t_ptr read GetHandle;
     property Error      : WideString            read GetError;
@@ -341,6 +342,20 @@ begin
   if (option <> '') and (FStartOptions.IndexOf(option) < 0) then
   begin
     FStartOptions.Add(option);
+  end;
+end;
+
+procedure TPasLibVlc.DelOption(option : string);
+var
+  Index : Integer;
+begin
+  if (option <> '')  then
+  begin
+    Index := FStartOptions.IndexOf(option);
+    if (Index >= 0)  then
+    begin
+      FStartOptions.Delete(Index);
+    end;
   end;
 end;
 

@@ -4,4 +4,4 @@ PasLibVlc is interface to VideoLAN libvlc.dll and VCL player component for Delph
 author: **Robert Jędrzejczyk** \
 www: **http://prog.olsztyn.pl/paslibvlc**
 
-Copy of version **3.0.7**: https://prog.olsztyn.pl/paslibvlc/download_src/3.0.7/PasLibVlc_3.0.7.zip
+Copy of version **3.0.8**: https://prog.olsztyn.pl/paslibvlc/download_src/3.0.8/PasLibVlc_3.0.8.zip

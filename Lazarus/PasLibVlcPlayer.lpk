@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
-  <Package Version="4">
+  <Package Version="5">
     <PathDelim Value="\"/>
     <Name Value="PasLibVlcPlayer"/>
     <Type Value="RunAndDesignTime"/>
@@ -36,7 +36,7 @@
       </Other>
     </CompilerOptions>
     <Description Value="VideoLAN libvlc library interface and components."/>
-    <Version Major="3" Release="7"/>
+    <Version Major="3" Release="8"/>
     <Files Count="2">
       <Item1>
         <Filename Value="..\source\PasLibVlcUnit.pas"/>
@@ -48,6 +48,7 @@
         <UnitName Value="PasLibVlcPlayerUnit"/>
       </Item2>
     </Files>
+    <CompatibilityMode Value="True"/>
     <RequiredPkgs Count="2">
       <Item1>
         <PackageName Value="LCL"/>

@@ -1,16 +1,16 @@
 #   File generated automatically by Lazarus Package Manager
 #
-#   Makefile.fpc for PasLibVlcPlayer 3.0.7
+#   Makefile.fpc for PasLibVlcPlayer 3.0.8
 #
-#   This file was generated on 2020-07-05
+#   This file was generated on 15.01.2024
 
 [package]
 name=paslibvlcplayer
-version=3.0.7
+version=3.0.8
 
 [compiler]
 unittargetdir=lib/$(CPU_TARGET)-$(OS_TARGET)
-unitdir=../source ../source.vcl C:/lazarus/packager/units/$(CPU_TARGET)-$(OS_TARGET) C:/lazarus/components/lazutils/lib/$(CPU_TARGET)-$(OS_TARGET) C:/lazarus/lcl/units/$(CPU_TARGET)-$(OS_TARGET) C:/lazarus/lcl/units/$(CPU_TARGET)-$(OS_TARGET)/$(LCL_PLATFORM) .
+unitdir=../source ../source.vcl D:/lazarus/packager/units/$(CPU_TARGET)-$(OS_TARGET) D:/lazarus/components/lazutils/lib/$(CPU_TARGET)-$(OS_TARGET) D:/lazarus/components/freetype/lib/$(CPU_TARGET)-$(OS_TARGET) D:/lazarus/lcl/units/$(CPU_TARGET)-$(OS_TARGET) D:/lazarus/lcl/units/$(CPU_TARGET)-$(OS_TARGET)/$(LCL_PLATFORM) .
 options= -MDelphi -Scghi -CX -O4 -g -gl -gh -Xg -l -vewnhibq -dLCL -dLCL$(LCL_PLATFORM) $(DBG_OPTIONS)
 
 [target]
@@ -35,7 +35,7 @@ ifeq ($(OS_TARGET),win64)
 LCL_PLATFORM=win32
 else
 ifeq ($(OS_TARGET),darwin)
-LCL_PLATFORM=carbon
+LCL_PLATFORM=cocoa
 else
 LCL_PLATFORM=gtk2
 endif
@@ -56,7 +56,7 @@ cleartarget:
         -$(DEL) $(COMPILER_UNITTARGETDIR)/paslibvlcplayer$(PPUEXT)
 
 compiled:
-        $(CPPROG) -f Makefile.compiled $(COMPILER_UNITTARGETDIR)/PasLibVlcPlayer.compiled
+        $(CPPROG) -f Makefile.compiled $(COMPILER_UNITTARGETDIR)/paslibvlcplayer.compiled
 
 all: cleartarget $(COMPILER_UNITTARGETDIR) paslibvlcplayer$(PPUEXT) compiled
 

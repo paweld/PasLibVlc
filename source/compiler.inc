@@ -1,14 +1,14 @@
 (*
  *******************************************************************************
  *
- * Last modified: 2020.07.05
+ * Last modified: 2024.01.15
  *
  * author: Robert Jędrzejczyk
  * e-mail: robert@prog.olsztyn.pl
  *
  *******************************************************************************
  *
- * Copyright (c) 2020 Robert Jędrzejczyk
+ * Copyright (c) 2024 Robert Jędrzejczyk
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -31,6 +31,8 @@
  *)
 
 // http://docwiki.embarcadero.com/RADStudio/Sydney/en/Compiler_Versions
+// https://docwiki.embarcadero.com/RADStudio/Alexandria/en/Compiler_Versions
+// https://docwiki.embarcadero.com/RADStudio/Athens/en/Compiler_Versions
 
 {$DEFINE DELPHI_XX}
 
@@ -226,10 +228,28 @@
   {$UNDEF DELPHI_XX}
 {$ENDIF}
 
+// Delphi 11.0 Alexandria
+{$IFDEF VER350}
+  {$DEFINE DELPHI28}
+  {$DEFINE DELPHI_XE11}
+  {$DEFINE DELPHI_ALEXANDRIA}
+  {$UNDEF DELPHI_XX}
+{$ENDIF}
+
+// Delphi 12.0 Athens
+{$IFDEF VER360}
+  {$DEFINE DELPHI29}
+  {$DEFINE DELPHI_XE12}
+  {$DEFINE DELPHI_ATHENS}
+  {$UNDEF DELPHI_XX}
+{$ENDIF}
+
 {$IFDEF DELPHI_XX}
   ERROR: Unknown compiler please update compiler.inc file
 {$ENDIF}
 
+{$IFDEF DELPHI29} {$DEFINE DELPHI29_UP} {$ENDIF}
+{$IFDEF DELPHI28} {$DEFINE DELPHI28_UP} {$ENDIF}
 {$IFDEF DELPHI27} {$DEFINE DELPHI27_UP} {$ENDIF}
 {$IFDEF DELPHI26} {$DEFINE DELPHI26_UP} {$ENDIF}
 {$IFDEF DELPHI25} {$DEFINE DELPHI25_UP} {$ENDIF}
@@ -257,6 +277,8 @@
 {$IFDEF DELPHI2}  {$DEFINE DELPHI2_UP}  {$ENDIF}
 {$IFDEF DELPHI1}  {$DEFINE DELPHI1_UP}  {$ENDIF}
 
+{$IFDEF DELPHI29_UP} {$DEFINE DELPHI28_UP} {$ENDIF}
+{$IFDEF DELPHI28_UP} {$DEFINE DELPHI27_UP} {$ENDIF}
 {$IFDEF DELPHI27_UP} {$DEFINE DELPHI26_UP} {$ENDIF}
 {$IFDEF DELPHI26_UP} {$DEFINE DELPHI25_UP} {$ENDIF}
 {$IFDEF DELPHI25_UP} {$DEFINE DELPHI24_UP} {$ENDIF}
@@ -284,6 +306,8 @@
 {$IFDEF DELPHI3_UP}  {$DEFINE DELPHI2_UP}  {$ENDIF}
 {$IFDEF DELPHI2_UP}  {$DEFINE DELPHI1_UP}  {$ENDIF}
 
+{$IFDEF DELPHI29_UP} {$DEFINE DELPHI_XE12_UP} {$DEFINE DELPHI_ATHENS_UP} {$ENDIF}
+{$IFDEF DELPHI28_UP} {$DEFINE DELPHI_XE11_UP} {$DEFINE DELPHI_ALEXANDRIA_UP} {$ENDIF}
 {$IFDEF DELPHI27_UP} {$DEFINE DELPHI_XE10_4_UP} {$DEFINE DELPHI_SYDNEY_UP} {$ENDIF}
 {$IFDEF DELPHI26_UP} {$DEFINE DELPHI_XE10_3_UP} {$DEFINE DELPHI_RIO_UP} {$ENDIF}
 {$IFDEF DELPHI25_UP} {$DEFINE DELPHI_XE10_2_UP} {$DEFINE DELPHI_TOKYO_UP} {$ENDIF}

@@ -1,20 +1,21 @@
 object MainForm: TMainForm
   Left = 411
-  Height = 367
+  Height = 550
   Top = 192
-  Width = 515
+  Width = 772
   Caption = 'DemoPasLibVlc'
+  DesignTimePPI = 144
   Menu = MainMenu
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  LCLVersion = '2.0.2.0'
+  LCLVersion = '3.0.0.3'
   object OpenDialog: TOpenDialog
-    left = 16
-    top = 16
+    Left = 24
+    Top = 24
   end
   object MainMenu: TMainMenu
-    left = 16
-    top = 72
+    Left = 24
+    Top = 108
     object FileMenuItem: TMenuItem
       Caption = 'File'
       object OpenMenuItem: TMenuItem

@@ -1,3 +1,22 @@
+2024.01.15 bug fixes
+
+           merge changes reported by Javier Cuevas           
+
+               new procedure:
+                   TPasLibVlc.DelOption(option : string);
+
+               modified procedures:
+                   libvlc_media_player_set_display_window
+                   lib_vlc_player_event_hdlr
+                   
+            correct function declartion:
+               libvlc_renderer_discoverer_list_get
+               libvlc_renderer_discoverer_list_release
+               
+            modify procedures:
+                TPasLibVlcPlayer.EventsEnable();
+                TPasLibVlcPlayer.EventsDisable();
+
 2020.07.05 Switch to MIT licence, and try prepare to support v4
 
            vlc-4.0.0-20200403-0251 build remove functions:
@@ -103,7 +122,7 @@
            
 2018.06.11 Correct function read_dec_number
 
-           reported by Wortmann Sándor <wortmann@visualsolutions.hu>
+           reported by Wortmann SÃ¡ndor <wortmann@visualsolutions.hu>
            
 2018-04-23 Correct video callbacks declarations
 

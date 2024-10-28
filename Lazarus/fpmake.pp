@@ -3,7 +3,7 @@
 
    fpmake.pp for PasLibVlcPlayer 3.0.7
 
-   This file was generated on 2020-07-05
+   This file was generated on 10.08.2020
 }
 
 {$ifndef ALLPACKAGES} 

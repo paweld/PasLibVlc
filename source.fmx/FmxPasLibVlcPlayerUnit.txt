@@ -1,4 +1,4 @@
-﻿2020.07.05 Switch to MIT licence, and try prepare to support v4
+2020.07.05 Switch to MIT licence, and try prepare to support v4
 
 2019.03.24 Modify Stop procedure
 

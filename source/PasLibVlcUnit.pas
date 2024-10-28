@@ -1,10 +1,10 @@
 (*
  *******************************************************************************
- * PasLibVlcUnit.pas - pascal interface for VideoLAN libvlc 3.0.11
+ * PasLibVlcUnit.pas - pascal interface for VideoLAN libvlc 3.0.20
  *
  * See copyright notice below.
  *
- * Last modified: 2020.07.05
+ * Last modified: 2024.01.15
  *
  * author: Robert Jędrzejczyk
  * e-mail: robert@prog.olsztyn.pl
@@ -14,7 +14,7 @@
  *
  *******************************************************************************
  *
- * Copyright (c) 2020 Robert Jędrzejczyk
+ * Copyright (c) 2024 Robert Jędrzejczyk
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -38,7 +38,7 @@
  *
  * libvlc is part of project VideoLAN
  *
- * Copyright (c) 1996-2018 VideoLAN Team
+ * Copyright (c) 1996-2024 VideoLAN Team
  *
  * For more information about VideoLAN
  *
@@ -6882,12 +6882,17 @@ var
  *
  * see libvlc_renderer_discoverer_list_get()
  *)
+
 type
-  libvlc_rd_description_t_ptr = ^libvlc_rd_description_t;
   libvlc_rd_description_t = record
     psz_name : PAnsiChar;
     psz_longname : PAnsiChar;
   end;
+  libvlc_rd_description_t_ptr = ^libvlc_rd_description_t;
+
+type
+  libvlc_rd_description_t_list_ptr = ^libvlc_rd_description_t_list;
+  libvlc_rd_description_t_list = array[0..(MaxInt div sizeof(libvlc_rd_description_t_ptr)-1)] of libvlc_rd_description_t_ptr;
 
 const
   LIBVLC_RENDERER_CAN_AUDIO = $0001; // The renderer can render audio
@@ -7097,7 +7102,7 @@ var
 var
   libvlc_renderer_discoverer_list_get : function(
     p_inst       : libvlc_instance_t_ptr;
-    ppp_services : libvlc_rd_description_t_ptr
+    var ppp_services : libvlc_rd_description_t_list_ptr
   ) : libvlc_size_t; cdecl;
 
 (**
@@ -7113,7 +7118,7 @@ var
 
 var
   libvlc_renderer_discoverer_list_release : procedure(
-    pp_services : libvlc_rd_description_t_ptr;
+    pp_services : libvlc_rd_description_t_list_ptr;
     i_count     : libvlc_size_t); cdecl;
 
 {$IFDEF USE_VLC_DEPRECATED_API}
@@ -7739,16 +7744,15 @@ end;
   // LD_LIBRARY_PATH, then in /lib, then /usr/lib and finally the paths of
   // /etc/ld.so.conf.
 const
-  pathLst : array[0..8] of string = (
+  pathLst : array[0..7] of string = (
     '/usr/lib',
     '/lib',
     '/usr/local/lib',
     '/lib64',
     '/usr/lib64',
     '/usr/lib/x86_64-linux-gnu',
-    '/usr/lib/aarch64-linux-gnu',
-    '/usr/lib/arm-linux-gnueabihf',
-    '/snap/vlc/current/usr/lib'
+    '/snap/vlc/current/usr/lib',
+    '/lib/aarch64-linux-gnu' //  Raspberry Pi 4, Ubuntu 64 bit - reported by Roger
   );
 var
   pathIdx : Integer;
@@ -11892,9 +11896,19 @@ end;
 procedure libvlc_media_player_set_display_window(
   p_mi : libvlc_media_player_t_ptr;
   window_handle : TPasLibVlcWinHandle);
+{$IFDEF MSWINDOWS}
+var
+  i_style : {$IFDEF CPUX64}Int64{$ELSE}Integer{$ENDIF};
+{$ENDIF}
 begin
   {$IFDEF FPC}
     {$IFDEF MSWINDOWS}
+      i_style := GetWindowLong(window_handle, GWL_STYLE);
+      if (0 = (i_style and WS_CLIPCHILDREN))  then
+      begin        
+        SetWindowLong(window_handle, GWL_STYLE, i_style or WS_CLIPCHILDREN );
+      end;
+
       {$IFDEF LCLQT5}
         libvlc_media_player_set_hwnd(p_mi, QWidget_winid(TQtWidget(window_handle).Widget));
         exit;
@@ -11951,6 +11965,12 @@ begin
   // DELPHI
 
   {$IFDEF MSWINDOWS}
+    i_style := GetWindowLong(window_handle, GWL_STYLE);
+    if (0 = (i_style and WS_CLIPCHILDREN))  then
+    begin
+      SetWindowLong(window_handle, GWL_STYLE, i_style or WS_CLIPCHILDREN );
+    end;
+	  
     libvlc_media_player_set_hwnd(p_mi, window_handle);
     exit;
   {$ENDIF}

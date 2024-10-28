@@ -1,10 +1,10 @@
-﻿(*
+(*
  *******************************************************************************
- * FmxPasLibVlcPlayerUnit.pas - FMX component for VideoLAN libvlc 3.0.11
+ * FmxPasLibVlcPlayerUnit.pas - FMX component for VideoLAN libvlc 3.0.20
  *
  * See copyright notice below.
  *
- * Last modified: 2020.07.05
+ * Last modified: 2024.01.15
  *
  * author: Robert Jędrzejczyk
  * e-mail: robert@prog.olsztyn.pl
@@ -15,7 +15,7 @@
  *
  *******************************************************************************
  *
- * Copyright (c) 2020 Robert Jędrzejczyk
+ * Copyright (c) 2024 Robert Jędrzejczyk
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -39,7 +39,7 @@
  *
  * libvlc is part of project VideoLAN
  *
- * Copyright (c) 1996-2018 VideoLAN Team
+ * Copyright (c) 1996-2024 VideoLAN Team
  *
  * For more information about VideoLAN
  *

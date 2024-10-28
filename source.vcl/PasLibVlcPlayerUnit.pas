@@ -1,12 +1,12 @@
 (*
  *******************************************************************************
- * PasLibVlcPlayerUnit.pas - VCL component for VideoLAN libvlc 3.0.11
+ * PasLibVlcPlayerUnit.pas - VCL component for VideoLAN libvlc 3.0.20
  *
  * See copyright notice below.
  *
- * Last modified: 2020.07.05
+ * Last modified: 2024.01.15
  *
- * author: Robert Jêdrzejczyk
+ * author: Robert JÄ™drzejczyk
  * e-mail: robert@prog.olsztyn.pl
  *    www: http://prog.olsztyn.pl/paslibvlc
  *
@@ -15,7 +15,7 @@
  *
  *******************************************************************************
  *
- * Copyright (c) 2020 Robert Jêdrzejczyk
+ * Copyright (c) 2023 Robert JÄ™drzejczyk
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -39,7 +39,7 @@
  *
  * libvlc is part of project VideoLAN
  *
- * Copyright (c) 1996-2018 VideoLAN Team
+ * Copyright (c) 1996-2024 VideoLAN Team
  *
  * For more information about VideoLAN
  *
@@ -1010,6 +1010,7 @@ end;
 procedure lib_vlc_player_event_hdlr(p_event: libvlc_event_t_ptr; data: Pointer); cdecl; forward;
 procedure lib_vlc_media_list_event_hdlr(p_event: libvlc_event_t_ptr; data: Pointer); cdecl; forward;
 procedure lib_vlc_media_list_player_event_hdlr(p_event: libvlc_event_t_ptr; data: Pointer); cdecl; forward;
+procedure libvlc_renderer_discoverer_event_hdlr(p_event: libvlc_event_t_ptr; data: Pointer); cdecl; forward;
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -1733,8 +1734,6 @@ begin
       libvlc_event_attach(p_mi_ev_mgr, libvlc_MediaPlayerESSelected,         lib_vlc_player_event_hdlr, SELF);
       libvlc_event_attach(p_mi_ev_mgr, libvlc_MediaPlayerAudioDevice,        lib_vlc_player_event_hdlr, SELF);
       libvlc_event_attach(p_mi_ev_mgr, libvlc_MediaPlayerChapterChanged,     lib_vlc_player_event_hdlr, SELF);
-      libvlc_event_attach(p_mi_ev_mgr, libvlc_RendererDiscovererItemAdded,   lib_vlc_player_event_hdlr, SELF);
-      libvlc_event_attach(p_mi_ev_mgr, libvlc_RendererDiscovererItemDeleted, lib_vlc_player_event_hdlr, SELF);
     end;
   end;
 end;
@@ -1743,8 +1742,6 @@ procedure TPasLibVlcPlayer.EventsDisable();
 begin
   if Assigned(p_mi_ev_mgr) then
   begin
-    libvlc_event_detach(p_mi_ev_mgr, libvlc_RendererDiscovererItemDeleted, lib_vlc_player_event_hdlr, SELF);
-    libvlc_event_detach(p_mi_ev_mgr, libvlc_RendererDiscovererItemAdded,   lib_vlc_player_event_hdlr, SELF);
     libvlc_event_detach(p_mi_ev_mgr, libvlc_MediaPlayerChapterChanged,     lib_vlc_player_event_hdlr, SELF);
     libvlc_event_detach(p_mi_ev_mgr, libvlc_MediaPlayerAudioDevice,        lib_vlc_player_event_hdlr, SELF);
     libvlc_event_detach(p_mi_ev_mgr, libvlc_MediaPlayerESSelected,         lib_vlc_player_event_hdlr, SELF);
@@ -4242,25 +4239,35 @@ var
   tmp  : PAnsiChar;
   mrl  : string;
 begin
-  if Assigned(FOnMediaPlayerMediaChanged) then
-  begin
-    {$IFDEF CPUX64}
-    p_md := libvlc_media_t_ptr(m.WParam);
-    {$ELSE}
-    data := (Int64(m.WParam) shl 32) or Int64(m.LParam);
-    p_md := libvlc_media_t_ptr(data);
-    {$ENDIF}
+  {$IFDEF CPUX64}
+  p_md := libvlc_media_t_ptr(m.WParam);
+  {$ELSE}
+  data := (Int64(m.WParam) shl 32) or Int64(m.LParam);
+  p_md := libvlc_media_t_ptr(data);
+  {$ENDIF}
+
+  try
+    if Assigned(FOnMediaPlayerMediaChanged) then
+    begin
+      if (p_md <> NIL) then
+      begin
+        tmp := libvlc_media_get_mrl(p_md);
+        mrl := {$IFDEF DELPHI_XE2_UP}UTF8ToWideString{$ELSE}UTF8Decode{$ENDIF}(tmp);
+      end
+      else
+      begin
+        mrl := '';
+      end;
+      FOnMediaPlayerMediaChanged(SELF, mrl);
+    end;
+
+  finally
     if (p_md <> NIL) then
     begin
-      tmp := libvlc_media_get_mrl(p_md);
-      mrl := {$IFDEF DELPHI_XE2_UP}UTF8ToWideString{$ELSE}UTF8Decode{$ENDIF}(tmp);
-    end
-    else
-    begin
-      mrl := '';
+      libvlc_media_release(p_md);
     end;
-    FOnMediaPlayerMediaChanged(SELF, mrl);
   end;
+
   m.Result := 0;
 end;
 {$WARNINGS ON}
@@ -4642,6 +4649,9 @@ begin
     case event_type of
         
       libvlc_MediaPlayerMediaChanged:
+      begin
+        libvlc_media_retain(media_player_media_changed.new_media);
+
       {$IFDEF CPUX64}
         PostMessage(player.Handle, WM_MEDIA_PLAYER_MEDIA_CHANGED,
           WPARAM(media_player_media_changed.new_media),
@@ -4651,6 +4661,7 @@ begin
           WPARAM(Int64(media_player_media_changed.new_media) shr 32),
           LPARAM(Int64(media_player_media_changed.new_media)));
       {$ENDIF}
+      end;
 
       libvlc_MediaPlayerTimeChanged:
       {$IFDEF CPUX64}
@@ -4807,28 +4818,6 @@ begin
         PostMessage(player.Handle, WM_MEDIA_PLAYER_CHAPTER_CHANGED,
           WPARAM(media_player_chapter_changed.new_chapter),
           LPARAM(0));
-
-      libvlc_RendererDiscovererItemAdded:
-      {$IFDEF CPUX64}
-        PostMessage(player.Handle, WM_RENDERED_DISCOVERED_ITEM_ADDED,
-          WPARAM(renderer_discoverer_item_added.item),
-          LPARAM(0));
-      {$ELSE}
-          PostMessage(player.Handle, WM_RENDERED_DISCOVERED_ITEM_ADDED,
-            WPARAM(Int64(renderer_discoverer_item_added.item) shr 32),
-            LPARAM(Int64(renderer_discoverer_item_added.item)));
-      {$ENDIF}
-
-      libvlc_RendererDiscovererItemDeleted:
-      {$IFDEF CPUX64}
-        PostMessage(player.Handle, WM_RENDERED_DISCOVERED_ITEM_DELETED,
-          WPARAM(renderer_discoverer_item_deleted.item),
-          LPARAM(0));
-      {$ELSE}
-          PostMessage(player.Handle, WM_RENDERED_DISCOVERED_ITEM_DELETED,
-            WPARAM(Int64(renderer_discoverer_item_deleted.item) shr 32),
-            LPARAM(Int64(renderer_discoverer_item_deleted.item)));
-      {$ENDIF}
     end;
   end;
 end;
@@ -4942,6 +4931,48 @@ begin
 
     end;
   end;
+end;
+
+procedure libvlc_renderer_discoverer_event_hdlr(p_event: libvlc_event_t_ptr; data: Pointer); cdecl;
+var
+  player: TPasLibVlcPlayer;
+begin
+  if (data = NIL) then exit;
+
+  player := TPasLibVlcPlayer(data);
+
+  if not Assigned(player) then exit;
+
+  if Assigned(player.FOnMediaPlayerEvent) then
+    player.FOnMediaPlayerEvent(p_event, data);
+
+  with p_event^ do
+  begin
+    case event_type of
+      libvlc_RendererDiscovererItemAdded:
+      {$IFDEF CPUX64}
+        PostMessage(player.Handle, WM_RENDERED_DISCOVERED_ITEM_ADDED,
+          WPARAM(renderer_discoverer_item_added.item),
+          LPARAM(0));
+      {$ELSE}
+          PostMessage(player.Handle, WM_RENDERED_DISCOVERED_ITEM_ADDED,
+            WPARAM(Int64(renderer_discoverer_item_added.item) shr 32),
+            LPARAM(Int64(renderer_discoverer_item_added.item)));
+      {$ENDIF}
+
+      libvlc_RendererDiscovererItemDeleted:
+      {$IFDEF CPUX64}
+        PostMessage(player.Handle, WM_RENDERED_DISCOVERED_ITEM_DELETED,
+          WPARAM(renderer_discoverer_item_deleted.item),
+          LPARAM(0));
+      {$ELSE}
+          PostMessage(player.Handle, WM_RENDERED_DISCOVERED_ITEM_DELETED,
+            WPARAM(Int64(renderer_discoverer_item_deleted.item) shr 32),
+            LPARAM(Int64(renderer_discoverer_item_deleted.item)));
+      {$ENDIF}
+    end;
+  end;
+
 end;
 {$WARNINGS ON}
 {$HINTS ON}

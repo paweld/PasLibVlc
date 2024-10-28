@@ -1,4 +1,9 @@
-﻿2020.07.05 Switch to MIT licence, and try prepare to support v4
+2024.01.15 merge changes reported by Javier Cuevas
+
+           modified procedure:
+                procedure TPasLibVlcPlayer.WmMediaPlayerMediaChanged(var m: TVlcMessage);
+
+2020.07.05 Switch to MIT licence, and try prepare to support v4
 
 2019.03.24 Modify Stop procedure
 
